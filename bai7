@@ -1,0 +1,30 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int secretNumber = random.nextInt(100) + 1;
+        int guess = 0;
+
+        System.out.println("=== Trò chơi đoán số ===");
+        System.out.println("Máy đã chọn 1 số từ 1 đến 100. Hãy thử đoán!");
+
+        while (guess != secretNumber) {
+            System.out.print("Nhập số bạn đoán: ");
+            guess = scanner.nextInt();
+
+            if (guess > secretNumber) {
+                System.out.println("Số bạn đoán lớn hơn số bí mật.");
+            } else if (guess < secretNumber) {
+                System.out.println("Số bạn đoán nhỏ hơn số bí mật.");
+            } else {
+                System.out.println("Chúc mừng! Bạn đã đoán đúng số " + secretNumber + "!");
+            }
+        }
+
+        scanner.close();
+    }
+}
