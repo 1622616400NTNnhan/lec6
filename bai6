@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập một số nguyên dương: ");
+        int number = scanner.nextInt();
+
+        if (number <= 0) {
+            System.out.println("Vui lòng nhập số nguyên dương!");
+        } else {
+            int sum = 0;
+
+            while (number > 0) {
+                int digit = number % 10;  // lấy chữ số cuối
+                sum += digit;             // cộng vào tổng
+                number /= 10;             // bỏ chữ số cuối
+            }
+
+            System.out.println("Tổng các chữ số là: " + sum);
+        }
+
+        scanner.close();
+    }
+}
