@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập số nguyên không âm N: ");
+        int N = scanner.nextInt();
+
+        if (N < 0) {
+            System.out.println("Không thể tính giai thừa cho số âm!");
+        } else {
+            long factorial = 1; // dùng long để chứa giá trị lớn hơn int
+            for (int i = N; i >= 1; i--) {
+                factorial *= i;
+            }
+
+            System.out.println("Giai thừa của " + N + " là: " + factorial);
+        }
+
+        scanner.close();
+    }
+}
