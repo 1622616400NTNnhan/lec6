@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class InputValidation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+
+        do {
+            System.out.print("Nhập một số từ 1 đến 10: ");
+            number = scanner.nextInt();
+
+            if (number < 1 || number > 10) {
+                System.out.println("Số không hợp lệ, vui lòng nhập lại!");
+            }
+        } while (number < 1 || number > 10);
+
+        System.out.println("Bạn đã nhập số hợp lệ: " + number);
+
+        scanner.close();
+    }
+}
